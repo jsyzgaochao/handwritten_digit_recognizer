@@ -1,0 +1,4 @@
+PySide
+Tensorflow
+opencv-python
+numpy
