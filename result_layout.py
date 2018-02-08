@@ -2,7 +2,7 @@ from PySide import QtCore, QtGui
 
 class ResultLayout(QtGui.QHBoxLayout):
     def __init__(self, parent=None, id=None, text="", has_btn=True):
-        super().__init__(parent)
+        super(ResultLayout, self).__init__(parent)
         self.initUI(text, has_btn)
         self.id = id
         self.callback = None

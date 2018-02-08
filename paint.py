@@ -4,14 +4,12 @@ import cv2
 
 class Paint(QtGui.QWidget):
     def __init__(self, parent=None, size=(256, 256)):
-        super().__init__(parent)
+        super(Paint, self).__init__(parent)
         self.initUI(size=size)
         self.pos_xy = []
         self.drawing = False
         self.callback = None
         self.linewidth = min(size) / 25.
-        # self.box = None
-        # self.sub_image = None
 
     def initUI(self, size):
         self.setFixedSize(size[0], size[1])
@@ -36,7 +34,7 @@ class Paint(QtGui.QWidget):
             if self.callback:
                 self.callback(self.getImageArray())
         elif event.button() == QtCore.Qt.RightButton:
-            self.pos_xy.clear()
+            self.pos_xy = []
             self.drawing = False
             self.update()
 

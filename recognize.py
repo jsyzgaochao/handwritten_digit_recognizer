@@ -10,7 +10,7 @@ import hashlib
 
 class PaintApp(QtGui.QWidget):
     def __init__(self, parent=None):
-        super().__init__(parent)
+        super(PaintApp, self).__init__(parent)
         self.initUI()
         self.tf = TfPredict()
 
@@ -59,6 +59,8 @@ if __name__ == '__main__':
 
     def resultCallback(id):
         path = "img/%d/"%id
+        if not os.path.exists("img/"):
+            os.mkdir("img/")
         if not os.path.exists(path):
             os.mkdir(path)
         md5 = hashlib.md5()
